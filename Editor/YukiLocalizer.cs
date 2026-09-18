@@ -64,7 +64,7 @@ namespace TsiYuki.Core.Editor
         /// <summary>Forces a reload, e.g. after editing a localization file.</summary>
         public void Reload() => _tables.Clear();
 
-        [MenuItem("Tools/TsiYuki/Reload Localization", priority = 1000)]
+        [MenuItem(YukiMenu.Root + "Reload Localization", priority = YukiMenu.SettingsPriority + 20)]
         private static void ReloadAll() => YukiLanguage.NotifyChanged();
     }
 }
