@@ -1,7 +1,7 @@
 {
   "name": "moe.tsiyuki.core",
   "displayName": "TsiYuki Core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "unity": "2022.3",
   "description": "Shared editor utilities (localization, UI helpers) used by TsiYuki's VRChat tools.",
   "author": {
