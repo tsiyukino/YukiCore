@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased] — 0.2.0
+## [0.2.0] - 2026-09-21
 
 ### Added
 - **Texture compositing**, moved here from the NonToon converter so other tools can use it:
