@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.0] - 2026-09-22
+
+### Added
+- **Menu placement.** `YukiMenuRegistry` lets one TsiYuki tool install its menu inside a menu another one
+  generates, whichever ran first: each tool registers the menu it made and asks for a move, and a pass here
+  settles them all once every tool has had its turn, before Modular Avatar. Loops are detected and left
+  alone. This package still references neither Modular Avatar nor the VRChat SDK — the tool that asked for
+  the move supplies the code that performs it.
+
 ## [0.2.0] - 2026-09-21
 
 ### Added

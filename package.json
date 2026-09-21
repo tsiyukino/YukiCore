@@ -1,7 +1,7 @@
 {
   "name": "moe.tsiyuki.core",
   "displayName": "TsiYuki Core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "unity": "2022.3",
   "description": "Shared editor utilities (localization, UI helpers) used by TsiYuki's VRChat tools.",
   "author": {
@@ -11,5 +11,7 @@
   "license": "MIT",
   "documentationUrl": "https://github.com/tsiyukino/YukiCore",
   "changelogUrl": "https://github.com/tsiyukino/YukiCore/blob/main/CHANGELOG.md",
-  "vpmDependencies": {}
+  "vpmDependencies": {
+    "nadena.dev.ndmf": ">=1.11.0 <2.0.0"
+  }
 }

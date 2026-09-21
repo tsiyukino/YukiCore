@@ -1,7 +1,9 @@
 {
     "name": "TsiYuki.Core.Editor",
     "rootNamespace": "TsiYuki.Core.Editor",
-    "references": [],
+    "references": [
+        "nadena.dev.ndmf"
+    ],
     "includePlatforms": [
         "Editor"
     ],
