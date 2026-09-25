@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0] - 2026-09-26
+
+### Added
+- `UndoEdit`: records a component before a tool edits it, then marks it dirty and registers the prefab
+  override, so the edit can be undone, is saved, and shows as an override on a prefab instance. Moved here
+  from Yuki Wardrobe and Yuki Material, which each had their own copy.
+- `AnimatorGraph`: the layers, write-defaults-off states and any-state entry transitions that generated FX
+  controllers are made of, each handed to the caller to persist. Moved here from the same two tools.
+  States are now built directly instead of through `AnimatorStateMachine.AddState(name, position)`, which
+  also wrote to the machine's asset file and registered an undo step behind the caller's back; names are
+  still made unique the same way.
+- EditMode tests for both (`TsiYuki.Core.Editor.Tests`).
+
 ## [0.3.0] - 2026-09-22
 
 ### Added
