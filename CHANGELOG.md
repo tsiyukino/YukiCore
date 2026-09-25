@@ -11,7 +11,11 @@
   States are now built directly instead of through `AnimatorStateMachine.AddState(name, position)`, which
   also wrote to the machine's asset file and registered an undo step behind the caller's back; names are
   still made unique the same way.
-- EditMode tests for both (`TsiYuki.Core.Editor.Tests`).
+- `YukiNdmfReport`: reports a build error to NDMF in a package's own words, from the tables its
+  `YukiLocalizer` already loads. Replaces the NDMF localizer and `Report` helper each tool kept, along with
+  the copy of the localization file parser that came with them. NDMF's error window now picks up edits to
+  the localization files after TsiYuki → Reload Localization, instead of keeping what it read first.
+- EditMode tests for all three (`TsiYuki.Core.Editor.Tests`).
 
 ## [0.3.0] - 2026-09-22
 

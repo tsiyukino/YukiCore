@@ -11,12 +11,15 @@ namespace TsiYuki.Core.Editor
     /// </summary>
     public sealed class YukiLocalizer
     {
-        private readonly string _packageName;
+        private readonly string _directory;
         private readonly Dictionary<string, Dictionary<string, string>> _tables = new Dictionary<string, Dictionary<string, string>>();
 
-        public YukiLocalizer(string packageName)
+        public YukiLocalizer(string packageName) : this(new DirectoryInfo($"Packages/{packageName}/Localization")) { }
+
+        /// <summary>Reads the tables from any folder; tests point it at a temporary one.</summary>
+        internal YukiLocalizer(DirectoryInfo directory)
         {
-            _packageName = packageName;
+            _directory = directory.FullName;
             YukiLanguage.Changed += () => _tables.Clear();
         }
 
@@ -38,12 +41,18 @@ namespace TsiYuki.Core.Editor
 
         public bool Has(string key) => Table("en").ContainsKey(key);
 
+        /// <summary>
+        /// The value in one language's table, or null when that table lacks the key. No fallback:
+        /// callers that have their own (NDMF's) need to see the gap.
+        /// </summary>
+        internal string Find(string fileCode, string key) =>
+            Table(fileCode).TryGetValue(key, out var value) ? value : null;
+
         private Dictionary<string, string> Table(string code)
         {
             if (_tables.TryGetValue(code, out var table)) return table;
             table = new Dictionary<string, string>();
-            var path = $"Packages/{_packageName}/Localization/{code}.txt";
-            var fullPath = Path.GetFullPath(path);
+            var fullPath = Path.Combine(_directory, code + ".txt");
             if (File.Exists(fullPath))
             {
                 foreach (var rawLine in File.ReadAllLines(fullPath))

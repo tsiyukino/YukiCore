@@ -3,6 +3,7 @@
     "rootNamespace": "TsiYuki.Core.Editor.Tests",
     "references": [
         "TsiYuki.Core.Editor",
+        "nadena.dev.ndmf",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],
