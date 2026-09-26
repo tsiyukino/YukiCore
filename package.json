@@ -3,7 +3,7 @@
   "displayName": "TsiYuki Core",
   "version": "0.4.0",
   "unity": "2022.3",
-  "description": "Shared editor utilities (localization, UI helpers) used by TsiYuki's VRChat tools.",
+  "description": "Shared editor code every TsiYuki VRChat tool uses: UI language and localization, the common inspector look, undo-safe edits and NDMF error reporting.",
   "author": {
     "name": "TsiYuki",
     "url": "https://github.com/tsiyukino"
